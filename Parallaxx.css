@@ -1,0 +1,95 @@
+*{
+    margin: 0; /*m-0 likhne se margin 0 ho jati hai and p-0 likhne se padding*/
+    padding: 0;
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100vh;
+    /* kyuki poori website ham wrapper division ke andar rkhenge as a good practice to poori website ki height to 
+    poore view port ki height ke barabar hi to hogi na*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+#container{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    z-index: -1; 
+    /* idk why yaha index -1 kiya gya */
+}
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* The CSS object fit property is used to specify how an ing or video should be resized to fit its container*/
+    object-fit: cover;
+    z-index: -1;
+}
+.background{
+    transform: translateZ(-40px);
+    scale: 6;
+}
+.foreground{
+    transform: translateZ(-20px);
+    scale: 3;
+}
+h1{
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    transform: translateX(-50%);
+    font-size: 7rem;
+    letter-spacing: 4px;
+    /* letter-spacing bhi mdn pr dekh lio ek baar*/
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+section{
+    background-color: rgb(45,45,45);
+    color: white;
+    padding: 5rem 0;
+}
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;
+    /* Specifies whether the background images are fixed with regard to the viewport ('fixed') or scroll along with the element ('scroll') or its contents ('local'). */
+    background-size: cover; /* isse background image hamesha badiya fit ho jati h */
+    height: 500px;
+}
+.bg1{
+    background-image: url(images/sport-1.jpg);
+    /* hw study about why we have not used img tag i.e. difference between img and background-image*/
+}
+.bg2{
+    background-image: url(images/sport-2.jpg);
+}
+.bg3{
+    background-image: url(images/sport-3.jpg);
+}
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+    /* is syntax ko dekhio kyuki mujhe samaj nhi aaya */
+}
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+.desc{
+    position: absolute;
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+    /* degree of blackness or stroke thickness. */
+}
